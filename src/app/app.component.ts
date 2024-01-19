@@ -1,58 +1,13 @@
-import { Component, OnInit, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html', 
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements 
-  OnInit, 
-  OnChanges, 
-  DoCheck, 
-  AfterContentInit, 
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy {
+export class AppComponent {
 
   serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!'}];
-
-  constructor() {
-    console.log('constructor called!')
-   }
-
-  ngOnChanges(changes: SimpleChanges){
-    console.log('ngOnChanges called!')
-    console.log(changes)  
-  }
-
-  ngOnInit() {
-    console.log('ngOnInit called!')
-  }
-
-  ngDoCheck() {
-    console.log('ngDoCheck called!');
-  }
-
-  ngAfterContentInit() {
-    console.log('ngAfterContentInit called!');
-  }
-
-  ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked called!');
-  }
-
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit called!');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked called!');
-  }
-
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy called!');
-  }
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
